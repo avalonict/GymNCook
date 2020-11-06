@@ -39,12 +39,12 @@ integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEj
                 </div>
              
                 <div class="form-group">
-                    Entreprise: <input id="entreprise" type="text" class="form-control" name="entreprise" >
+                    Entreprise: <input id="entreprise" type="text" class="form-control" name="entreprise" required />
                 </div>
 
                 <div class="form-group">
                     <i class="fa fa-phone"> </i>
-                    Téléphone : <input id="telephone" type="phone" class="form-control" name="telephone" >
+                    Téléphone : <input id="telephone" type="phone" class="form-control" name="telephone" required />
                 </div>
 
                 <div class="form-group">
@@ -59,27 +59,27 @@ integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEj
             
                 <div class="form-group">
                     <i class="fa fa-map-marker"></i>
-                    Adresse : <input id="adresse" type="test" class="form-control" name="adresse" >
+                    Adresse : <input id="adresse" type="test" class="form-control" name="adresse" required />
                 </div>
 
                 <div class="form-group">
-                    Code postal : <input id="zipCode"  class="form-control" type="text" name="zipCode" >
+                    Code postal : <input id="zipCode"  class="form-control" type="text" name="zipCode" required />
                 </div>
         
                 <div class="form-group">
-                    Ville : <input id="ville"  class="form-control" type="text" name="ville" >
+                    Ville : <input id="ville"  class="form-control" type="text" name="ville" required />
                 </div>
 
                 <div class="form-group">
-                    Province :  <input id="province"  class="form-control" type="text" name="province" >
+                    Province :  <input id="province"  class="form-control" type="text" name="province" required />
                 </div>
 
                 <div class="form-group">
-                    Pays : <input id="pays"  class="form-control" type="text" name="pays" >
+                    Pays : <input id="pays"  class="form-control" type="text" name="pays" required />
                 </div>
 
                 <div class="form-group">
-                    Travail: <input id="travail" type="text"  class="form-control" name="travail" ><br>
+                    Travail: <input id="travail" type="text"  class="form-control" name="travail" required /><br>
                 </div>
 
                 <div class="form-group">
@@ -87,12 +87,12 @@ integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEj
                 </div>
                 
                 <div id="modifier" class="form-group">
-                    <button  onclick="modifierUnMembre(document.getElementById('id').value)" class= "enregistre">
+                    <button  onclick="modifierUnNutritionniste(document.getElementById('id').value)" class= "enregistre">
                         <i class="fa fa-pencil"></i> Modifier</button>
                 </div>   
 
                 <span id="supprimer" class="form-group">
-                    <button  onclick="supprimerUnMembre(document.getElementById('id').value)" class= "enregistre">
+                    <button  onclick="supprimerUnNutritionniste(document.getElementById('id').value)" class= "enregistre">
                         <i class="fa fa-trash"></i> Supprimer</button>
                 </span>   
 

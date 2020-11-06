@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=100%, initial-scale=1.0"/>
+            
+<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">     
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">         
+<link rel="stylesheet" type="text/css" href="/css/index.css"> 
+
+<title> Ajoute une recette</title> 
+          
+</head> 
+<body class="col-md-6 offset-md-3">
+   
+    <div class="container" id="form"> 
+        <div class="row"> 
+        
+        <div class="col-md-6 main"> 
+
+            <label><U><h4><B>Ajoute une recette</B></h4></U></label><br><br>
+                      
+            <form action="/recette" method="post">    
+                              
+                <div class="form-group">
+                    <label>Catégorie</label>
+                    <input type="text" class="form-control" name="categorie" placeholder="Catégorie" >
+                </div>
+
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" required />
+                </div>
+            
+                <div class="form-group">
+                    <label>Chemin d'image</label>
+                    <input type="text" class="form-control" name="cheminImage" placeholder="/img/recettes/Biceps/curl_barre.jpg" required />
+                </div>
+             
+                <div class="form-group">
+                    <label>Instructions</label>
+                    <input type="text" class="form-control" name="instructions" placeholder="Instructions" required />
+                </div>
+            
+                <div class="form-group">
+                    <label>Ingrédients</label>
+                    <input type="text" class="form-control" name="ingredients" placeholder="Ingrédients" required />
+                </div>
+            
+                <div class="form-group">
+                    <label>Portions</label>
+                    <input type="text" class="form-control" name="portions" placeholder="Portions" >
+                </div>
+            
+                <div class="form-group">
+                    <label>Cuisson</label>
+                    <input type="number" class="form-control" name="cuisson" placeholder="Cuisson" >
+                </div>
+                
+                <div class="form-group">
+                    <button type="reset"><i class="fa fa-remove"> <B>Efface tout le formulaire</B> </i></button>
+                </div>
+
+                <div id="modifier" class="form-group">
+                    <button  type="submit" class= "enregistre">
+                    <i class="fa fa-check"></i> Enregistrer</button>
+                </div>
+
+            </form> 
+                      
+        </div>   
+     </div> 
+    </div> 
+</body> 
+</html> 

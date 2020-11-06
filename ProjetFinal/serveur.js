@@ -239,7 +239,7 @@ app.post('/entraineur', function(request,response){
             if (err) throw err; 
             console.log("Enregistrement avec succès");       
         }); 
-            return response.redirect('/ProfilAVerifier.html'); 
+            return response.redirect('/admin5fb8.html'); 
     }) 
     
 
@@ -364,7 +364,7 @@ app.post('/nutritionniste', function(request,response){
             if (err) throw err; 
             console.log("Enregistrement avec succès");       
         }); 
-            return response.redirect('/ProfilAVerifier.html'); 
+            return response.redirect('/admin5fb8.html'); 
     }) 
     
 
@@ -395,14 +395,12 @@ app.put("/nutritionniste/:id", async (request, response) => {
         }
     });
 
-
 app.delete("/nutritionniste/:id", async (request, response) => {   
     console.log("Route DELETE /nutritionniste/:id");  
     try {         
         let result = await nutritionnisteModel.deleteOne({ _id: request.params.id }).exec();         
         response.send(result); }     
     catch (error) { response.status(500).send(error); } }); 
-
 
 
 app.post('/auth', function (req, res, next) { 
@@ -419,7 +417,7 @@ app.post('/auth', function (req, res, next) {
            req.session._id = user._id
            req.session.prenom = user.prenom
            req.session.nom = user.nom
-           return res.redirect("/home.html");
+           return res.redirect("/home93e8.html");
         });
      });
 
@@ -439,72 +437,373 @@ app.get('/logout', function (req, res) {
         res.redirect("/index.html");
     });
 
-    
 
-const produitSchema = new mongoose.Schema({  
-        categorie: {
+
+const adminSchema = new mongoose.Schema({  
+        username: {
+            type: String 
+        },    
+        prenom: {
+            type: String 
+        },    
+        nom: {
+            type: String 
+        },   
+        entreprise: {
+            type: String 
+        },    
+        telephone: {
             type: String 
         },
-        noArticle: {
-            type: Number, 
-        },   
-        nomArticle: {
+        cellulaire: {
             type: String 
-        },     
-        description: {
-            type: String 
-        },     
-        cheminImage: {
+        },         
+        email: {
             type: String 
         },    
-        prixUnitaire: {
-            type: Number, 
-        },   
-        quantiteEnStock: {
-            type: Number 
-        },     
-        quantiteDansPanier: {
-            type: Number 
+        adresse: {
+            type: String 
         },    
-       
+        zipCode : {
+            type: String
+        },
+        ville: {
+            type: String 
+        },
+        province: {
+            type: String 
+        },
+        pays: {
+            type: String
+        },
+        travail: {
+            type: String 
+        },
+    
+        password: {
+            type: String 
+        }
     });
     
-    const ProduitModel = mongoose.model("Produit", produitSchema); 
-    
-    app.post('/produit', function(request,response){ 
-        let categorie = request.body.categorie;
-        let noArticle = request.body.noArticle;
-        let nomArticle = request.body.nomArticle;
-        let description = request.body.description;
-        let cheminImage = request.body.cheminImage;
-        let prixUnitaire = request.body.prixUnitaire;
-        let quantiteEnStock = request.body.quantiteEnStock;
-        let quantiteDansPanier = request.body.quantiteDansPanier;
-        
+const adminModel = mongoose.model("admin", adminSchema); 
+  
+app.post('/admin', function(request,response){ 
+        let username = request.body.username;
+        let prenom = request.body.prenom;
+        let nom = request.body.nom;
+        let entreprise = request.body.entreprise;
+        let telephone = request.body.telephone;
+        let cellulaire = request.body.cellulaire;
+        let email = request.body.email;
+        let adresse = request.body.adresse;
+        let zipCode = request.body.zipCode;
+        let ville =  request.body.ville;
+        let province = request.body.province;
+        let pays = request.body.pays;
+        let travail = request.body.travail;  
+        let password = request.body.password;  
+      
         let data = { 
-        "categorie" : categorie,
-        "noArticle" : noArticle,
-        "nomArticle" : nomArticle,
-        "description" : description,
-        "cheminImage" : cheminImage,
-        "prixUnitaire" : prixUnitaire,
-        "quantiteEnStock" :  quantiteEnStock,
-        "quantiteDansPanier" : quantiteDansPanier
-        
+        "username" : username,
+        "prenom" : prenom,
+        "nom" : nom,
+        "entreprise" : entreprise,
+        "telephone" : telephone,
+        "cellulaire" : cellulaire,
+        "email" : email,
+        "adresse" : adresse,
+        "zipCode" : zipCode,
+        "ville" : ville,
+        "province" : province,
+        "pays" : pays,
+        "travail" : travail,
+        "password" : password
         } 
     
-    db.collection('produits').insertOne(data,function(err, collection){ 
+        db.collection('admins').insertOne(data,function(err, collection){ 
             if (err) throw err; 
             console.log("Enregistrement avec succès");       
         }); 
             return response.redirect('/'); 
     }) 
     
+
+app.get("/admin/:id", async (request, response) => {     
+    console.log("Route GET /admin/:id");     
+    try {         
+        let admin = await adminModel.findById(request.params.id).exec();  
+        console.log(request.params.id);      
+        response.send(admin);     
+        }     
+    catch (error) {  
+        response.status(500).send(error);     
+        } 
+    }); 
      
-    app.get('/produits', async (request, response) => {
-        console.log("Route GET /produits");
+    
+app.put("/admin/:id", async (request, response) => {
+        console.log("Route PUT /admin/:id");
+        console.log(request.body);
+    try {
+        let admin = await adminModel.findById(request.params.id).exec();
+        admin.set(request.body);
+        let result = await admin.save();
+        response.send(result);
+        }
+    catch (error) {
+        response.status(500).send(error);
+        }
+    });
+
+app.delete("/admin/:id", async (request, response) => {   
+    console.log("Route DELETE /admin/:id");  
+    try {         
+        let result = await adminModel.deleteOne({ _id: request.params.id }).exec();         
+        response.send(result); }     
+    catch (error) { response.status(500).send(error); } 
+    
+}); 
+    
+    
+app.post('/adminAuth', function (req, res, next) { 
+    console.log(req.body); 
+    console.log("route POST /admin");    
+    let username = req.body.username;     
+    let password = req.body.password; 
+       
+    adminModel.findOne({username: username, password: password}, 
+        function(err, user) {
+            if(err) return next(err);
+            if(!user) return res.send("Mauvais nom d'usager ou mot de passe !");
+            req.session.loggedin = true; 
+            req.session._id = user._id
+            req.session.prenom = user.prenom
+            req.session.nom = user.nom
+            return res.redirect("/admin5fb8.html");
+          });
+       });
+  
+app.get('/admin', function(req, res) {  
+          if (req.session.loggedin) {   
+              console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
+              res.send (
+              req.query._id = req.session._id 
+              );
+          } 
+          else { res.send("Pour voir cette page, il faut être connecté");}  
+          res.end(); }); 
+  
+
+
+app.post('/entraineurAuth', function (req, res, next) { 
+            console.log(req.body); 
+              
+            let username = req.body.username;     
+            let password = req.body.password; 
+               
+            entraineurModel.findOne({username: username, password: password}, 
+                function(err, user) {
+                    if(err) return next(err);
+                    if(!user) return res.send("Mauvais nom d'usager ou mot de passe !");
+                    req.session.loggedin = true; 
+                    req.session._id = user._id
+                    req.session.prenom = user.prenom
+                    req.session.nom = user.nom
+                    return res.redirect("/entraineurd0df.html");
+                  });
+               });
+          
+app.get('/entraineur', function(req, res) {  
+    if (req.session.loggedin) {   
+    console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
+    res.send (
+             req.query._id = req.session._id 
+                      );
+                  } 
+    else { res.send("Pour voir cette page, il faut être connecté");}  
+            res.end(); }); 
+  
+            
+            
+app.post('/nutrionnisteAuth', function (req, res, next) { 
+    console.log(req.body); 
+       
+    let username = req.body.username;     
+    let password = req.body.password; 
+                   
+    nutritionnisteModel.findOne({username: username, password: password}, 
+        function(err, user) {
+        if(err) return next(err);
+        if(!user) return res.send("Mauvais nom d'usager ou mot de passe !");
+                    req.session.loggedin = true; 
+                    req.session._id = user._id
+                    req.session.prenom = user.prenom
+                    req.session.nom = user.nom
+                    return res.redirect("/nutritionnisteA798.html");
+                });
+        });
+
+              
+app.get('/nutritionniste', function(req, res) {  
+        if (req.session.loggedin) {   
+        console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
+        res.send (
+                 req.query._id = req.session._id 
+                          );
+                      } 
+        else { res.send("Pour voir cette page, il faut être connecté");}  
+                res.end(); }); 
+
+
+
+
+const specialisteSchema = new mongoose.Schema({  
+    username: {
+                type: String 
+                },    
+    prenom: {
+                type: String 
+                },    
+    nom: {
+                type: String 
+                    },   
+    entreprise: {
+                type: String 
+                    },    
+    telephone: {
+                type: String 
+                    },
+    cellulaire: {
+                type: String 
+                    },         
+    email: {
+                type: String 
+                    },    
+    adresse: {
+                type: String 
+                    },    
+    zipCode : {
+                type: String
+                    },
+    ville: {
+                type: String 
+                    },
+    province: {
+                type: String 
+                    },
+    pays: {
+                type: String
+                    },
+    travail: {
+                type: String 
+                    },
+                
+    password: {
+                type: String 
+                    }
+                });
+                
+    const specialisteModel = mongoose.model("specialiste", specialisteSchema); 
+              
+        app.post('/specialiste', function(request,response){ 
+                    let username = request.body.username;
+                    let prenom = request.body.prenom;
+                    let nom = request.body.nom;
+                    let entreprise = request.body.entreprise;
+                    let telephone = request.body.telephone;
+                    let cellulaire = request.body.cellulaire;
+                    let email = request.body.email;
+                    let adresse = request.body.adresse;
+                    let zipCode = request.body.zipCode;
+                    let ville =  request.body.ville;
+                    let province = request.body.province;
+                    let pays = request.body.pays;
+                    let travail = request.body.travail;  
+                    let password = request.body.password;  
+                  
+                    let data = { 
+                    "username" : username,
+                    "prenom" : prenom,
+                    "nom" : nom,
+                    "entreprise" : entreprise,
+                    "telephone" : telephone,
+                    "cellulaire" : cellulaire,
+                    "email" : email,
+                    "adresse" : adresse,
+                    "zipCode" : zipCode,
+                    "ville" : ville,
+                    "province" : province,
+                    "pays" : pays,
+                    "travail" : travail,
+                    "password" : password
+                    } 
+                
+                    db.collection('specialistes').insertOne(data,function(err, collection){ 
+                        if (err) throw err; 
+                        console.log("Enregistrement avec succès");       
+                    }); 
+                        return response.redirect('/ProfilAVerifier.html'); 
+            }) 
+
+
+const exerciceSchema = new mongoose.Schema({ 
+        categorie: {
+            type: String 
+        },    
+        nom: {
+            type: String, 
+        },   
+        description: {
+            type: String 
+        },     
+        cheminImage: {
+            type: String 
+        },    
+        repetitions: {
+            type: Number, 
+        },   
+        series: {
+            type: Number 
+        },     
+        pauses: {
+            type: Number 
+        },    
+    });
+    
+const exerciceModel = mongoose.model("exercice", exerciceSchema); 
+    
+    // Ajouter un enregistrement dans la DB (CREATE)
+    app.post('/exercice', function(request,response){ 
+        let categorie = request.body.categorie;
+        let nom = request.body.nom;
+        let description = request.body.description;
+        let cheminImage = request.body.cheminImage;
+        let repetitions = request.body.repetitions;
+        let series = request.body.series;
+        let pauses = request.body.pauses;
+      
+        let data = { 
+        "categorie" : categorie,
+        "nom" : nom,
+        "description" : description,
+        "cheminImage" : cheminImage,
+        "repetitions" : repetitions,
+        "series" :  series,
+        "pauses" : pauses
+        } 
+    
+    db.collection('exercices').insertOne(data,function(err, collection){ 
+            if (err) throw err; 
+            console.log("Enregistrement avec succès");       
+        }); 
+            return response.redirect("/entraineurd0df.html"); 
+    }) 
+    
+    // Obtenir la liste des enregistrement contenu dans la DB (READ) 
+    app.get('/exercices', async (request, response) => {
+        console.log("Route GET /exercices");
         try {
-             let result = await ProduitModel.find().exec();  
+             let result = await exerciceModel.find().exec();  
                 response.send(result);
                      } 
         catch (error) {
@@ -512,13 +811,13 @@ const produitSchema = new mongoose.Schema({
                     }
             });           
     
-    
-    app.get("/produit/:id", async (request, response) => {     
-        console.log("Route GET /produit/:id");     
+    // Obtenir un enregistrement en particulier dans la DB (READ) 
+    app.get("/exercice/:id", async (request, response) => {     
+        console.log("Route GET /exercice/:id");     
         try {         
-            let produit = await ProduitModel.findById(request.params.id).exec();  
+            let person = await exerciceModel.findById(request.params.id).exec();  
             console.log(request.params.id);      
-            response.send(produit);     
+            response.send(person);     
             }     
         catch (error) {  
             response.status(500).send(error);     
@@ -526,13 +825,13 @@ const produitSchema = new mongoose.Schema({
         }); 
      
     
-    app.put("/produit/:id", async (request, response) => {
-            console.log("Route PUT /produit/:id");
+    app.put("/exercice/:id", async (request, response) => {
+            console.log("Route PUT /exercice/:id");
             console.log(request.body);
         try {
-            let produit = await ProduitModel.findById(request.params.id).exec();
-            produit.set(request.body);
-            let result = await produit.save();
+            let person = await exerciceModel.findById(request.params.id).exec();
+            person.set(request.body);
+            let result = await person.save();
             response.send(result);
             }
         catch (error) {
@@ -540,12 +839,116 @@ const produitSchema = new mongoose.Schema({
             }
         });
     
-    
-    app.delete("/produit/:id", async (request, response) => {   
-        console.log("Route DELETE /produit/:id");  
+    // Effacer un enregistrement (EFFACER) 
+    app.delete("/exercice/:id", async (request, response) => {   
+        console.log("Route DELETE /exercice/:id");  
         try {         
-            let result = await ProduitModel.deleteOne({ _id: request.params.id }).exec();         
+            let result = await exerciceModel.deleteOne({ _id: request.params.id }).exec();         
             response.send(result); }     
-        catch (error) { response.status(500).send(error); } }); 
+        catch (error) { response.status(500).send(error); } });
+
+    
+    
+    const recetteSchema = new mongoose.Schema({ 
+
+            categorie: {
+                type: String 
+            },    
+            nom: {
+                type: String, 
+            },   
+            instructions: {
+                type: String 
+            },     
+            cheminImage: {
+                type: String 
+            },    
+            ingredients: {
+                type: String, 
+            },   
+            portions: {
+                type: String 
+            },     
+            cuisson: {
+                type: Number 
+            },    
+        });
+        
+    const recetteModel = mongoose.model("recette", recetteSchema); 
+        
+        // Ajouter un enregistrement dans la DB (CREATE)
+        app.post('/recette', function(request,response){ 
+            let categorie = request.body.categorie;
+            let nom = request.body.nom;
+            let instructions = request.body.instructions;
+            let cheminImage = request.body.cheminImage;
+            let ingredients = request.body.ingredients;
+            let portions = request.body.portions;
+            let cuisson = request.body.cuisson;
+          
+            let data = { 
+            "categorie" : categorie,
+            "nom" : nom,
+            "instructions" : instructions,
+            "cheminImage" : cheminImage,
+            "ingredients" : ingredients,
+            "portions" :  portions,
+            "cuisson" : cuisson
+            } 
+        
+        db.collection('recettes').insertOne(data,function(err, collection){ 
+                if (err) throw err; 
+                console.log("Enregistrement avec succès");       
+            }); 
+                return response.redirect('/nutritionnisteA798.html'); 
+        }) 
+        
+        // Obtenir la liste des enregistrement contenu dans la DB (READ) 
+        app.get('/recettes', async (request, response) => {
+            console.log("Route GET /recettes");
+            try {
+                 let result = await recetteModel.find().exec();  
+                    response.send(result);
+                         } 
+            catch (error) {
+                    response.status(500).send(error);
+                        }
+                });           
+        
+        // Obtenir un enregistrement en particulier dans la DB (READ) 
+        app.get("/recette/:id", async (request, response) => {     
+            console.log("Route GET /recette/:id");     
+            try {         
+                let person = await recetteModel.findById(request.params.id).exec();  
+                console.log(request.params.id);      
+                response.send(person);     
+                }     
+            catch (error) {  
+                response.status(500).send(error);     
+                } 
+            }); 
+         
+        
+        app.put("/recette/:id", async (request, response) => {
+                console.log("Route PUT /recette/:id");
+                console.log(request.body);
+            try {
+                let person = await recetteModel.findById(request.params.id).exec();
+                person.set(request.body);
+                let result = await person.save();
+                response.send(result);
+                }
+            catch (error) {
+                response.status(500).send(error);
+                }
+            });
+        
+        // Effacer un enregistrement (EFFACER) 
+        app.delete("/recette/:id", async (request, response) => {   
+            console.log("Route DELETE /recette/:id");  
+            try {         
+                let result = await recetteModel.deleteOne({ _id: request.params.id }).exec();         
+                response.send(result); }     
+            catch (error) { response.status(500).send(error); } });  
 
 app.listen(port, () => { console.log(`Serveur en écoute sur le port ${port}...`); });

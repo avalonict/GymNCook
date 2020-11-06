@@ -8,19 +8,20 @@
  
   </head>
   <body>
-    <h4>Cat&eacute;gorie de votre inscription</h4>
+    <h4>Cat&eacute;gorie de CRUD</h4>
     <br>
-    <form name="choiceUser">
+    <form name="choiceCRUD">
 
       <p>Votre choix: 
         <select name="liste" id="liste" size="1">
+          <option value="exercice">Exercice</option>
+          <option value="recette">Recette</option>
           <option value="utilisateur">Utilisateur</option>
           <option value="nutritionniste">Nutritionniste</option>
           <option value="entraineur">Entraineur</option>
-          <option value="admin">Admin</option>
         </select></p>
 
-      <input type="button" name="bouton" value="Confirmer" onclick="userInscription()">
+      <input type="button" name="bouton" value="Confirmer" onclick="adminCRUD()">
     </form>
   </body>
 </html>

@@ -42,9 +42,9 @@
 					</ul>
 					
 					<ul class="header-links pull-right">
-						<li><a href="#" onclick="adminConnexion('/html/adminLogin.html')" ><i class="fa fa-lock"></i> Admin</a></li>
-						<li><a href="#" onclick="choixConnexion('/html/optionConnexion.html')" ><i class="fa fa-user-o"></i> Mon compte</a></li>
-						<li><a href="#" onclick="choixInscription('/html/optionInscription.html')" ><i class="fa fa-user-plus"></i> Nouveau membre</a></li>
+						<li><a href="#" ><i class="fa fa-tasks"></i> Mon plan</a></li>
+						<li><a href="/logout" ><i class="fa fa-sign-out"></i> Se déconnecter</a></li>
+						<li><a href="#" onclick="profilMembre('/html/profilMembre.html')"><i class="fa fa-user " ></i> <span id="membreConnecte"> </span> : Profil</a></li>
 					</ul>
 
 				</div>
@@ -80,11 +80,11 @@
 							</div>
 						</div>
 						<!-- /SEARCH BAR -->
-
+						
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
-
+							
 								<!-- Menu Toogle -->
 								<div class="menu-toggle">
 									<a href="#">
@@ -113,7 +113,6 @@
 				<div id="responsive-nav">
 					<!-- NAV -->
 					<ul class="main-nav nav navbar-nav">
-						<li><a href="index.html" >Accueil</a></li>
 						<li><a href="#" onclick="exercices('/html/exercices.html')">Exercices</a></li>
 						<li><a href="#" onclick="recettes('/html/recettes.html')">Recettes</a></li>
 					</ul>
@@ -137,8 +136,7 @@
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title" id="voirHtml">
-							<h3 class="title">Profil à vérifier</h3>
-                    <p>Vous recevrez une nouvelle d'activation du compte sous peu</p>
+							<h3 class="title">Bienvenue</h3>
 						</div>
 					</div>
 					<!-- /section title -->
@@ -244,8 +242,8 @@
 								<h3 class="footer-title">Information</h3>
 								<ul class="footer-links">
 									<li><a href="#">Contactez-nous</a></li>
-									<li><a href="#">Politique de confidentialité</a></li>
-									<li><a href="#">Termes et conditions</a></li>
+									<li><a href="#" onclick="Politique('/html/Politique.html')">Politique de confidentialité</a></li>
+									<li><a href="#" onclick="Termes('/html/Termes.html')">Termes et conditions</a></li>
 								</ul>
 							</div>
 						</div>
@@ -254,7 +252,7 @@
 							<div class="footer">
 								<h3 class="footer-title">Service</h3>
 								<ul class="footer-links">
-									<li><a href="#">Mon compte</a></li>
+									<li><a href="#" onclick="connexion('/html/login.html')" ><i class="fa fa-user-o"></i> Mon compte</a></li>
 									<li><a href="#">Aides</a></li>
 								</ul>
 							</div>
@@ -282,7 +280,7 @@
 							<span class="copyright">
 								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 								Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-								 Tous droits réservés | G & C 
+								 Tous droits réservés | G & C
 							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</span>
 						</div>
