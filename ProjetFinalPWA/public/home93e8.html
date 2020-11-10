@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		 <link rel="manifest" href="GymNCook-manifest-26307.json">
+		 <script src="js/sw-GymNCook.js"></script>
+		<title>projet</title>
+
+		<!-- Google font -->
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+		<!-- Bootstrap -->
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+		<!-- Slick -->
+		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+		<!-- nouislider -->
+		<link type="text/css" rel="stylesheet" href="css/nouislider.min.css"/>
+
+		<!-- Font Awesome Icon -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Custom stlylesheet -->
+		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+	</head>
+	
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> 514.389.5921</a></li>
+						<li><a href="#"><i class="fa fa-envelope"></i> info@gymc.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i>9155 Rue St-Hubert</a></li>
+					</ul>
+					
+					<ul class="header-links pull-right">
+						<li><a href="#" ><i class="fa fa-tasks"></i> Mon plan</a></li>
+						<li><a href="/logout" ><i class="fa fa-sign-out"></i> Se déconnecter</a></li>
+						<li><a href="#" onclick="profilMembre('/html/profilMembre.html')"><i class="fa fa-user " ></i> <span id="membreConnecte"> </span> : Profil</a></li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+									<img src="./img/logoGC.png" alt="">
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								
+								<form >
+									<input id="jeCherche" type="text" class="input" placeholder="Recherche par catégorie" required />
+									<a href="#" onclick="rechercher()" class="btn btn-danger" ><i class="fa fa-search"></i></a>
+									<div id="rechercher"><p id="produitTrouve" ></p></div>
+								</form>
+							
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+						
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+							
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li><a href="#" onclick="exercices('/html/exercices.html')">Exercices</a></li>
+						<li><a href="#" onclick="recettes('/html/recettes.html')">Recettes</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<!-- section title -->
+					<div class="col-md-12">
+						<div class="section-title" id="voirHtml">
+							<h3 class="title">Bienvenue</h3>
+						</div>
+					</div>
+					<!-- /section title -->
+
+									</div>
+									<div id="slick-nav-2" class="products-slick-nav"></div>
+								</div>
+								<!-- /tab -->
+							</div>
+						</div>
+					</div>
+					<!-- /Products tab & slick -->
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+
+		<!-- NEWSLETTER -->
+		<div id="newsletter" class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12">
+						<div class="newsletter">
+							<p>ENREGISTREZ-vous pour ÊTRE <strong>EN FORME</strong></p>
+							<form>
+								<input class="input" type="email" placeholder="Entrez votre Email">
+								<button class="newsletter-btn"><i class="fa fa-envelope"></i> ENREGISTRER</button>
+							</form>
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /NEWSLETTER -->
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<!-- top footer -->
+			<div class="section">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Qui sommes-nous</h3>
+								<p>
+									<B><U>Planificateur</U></B> <br>
+									Système fiable de la mise en forme <br>
+									
+								<ul class="footer-links">
+									<li><a href="#"><i class="fa fa-map-marker"></i>9155 Rue St-Hubert</a></li>
+									<li><a href="#"><i class="fa fa-phone"></i>514.389.5921</a></li>
+									<li><a href="#"><i class="fa fa-envelope"></i>info@gymc.com</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Catégories</h3>
+								<ul class="footer-links">
+									<li><a href="#">Exercices</a></li>
+									<li><a href="#">Recettes</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="clearfix visible-xs"></div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Information</h3>
+								<ul class="footer-links">
+									<li><a href="#">Contactez-nous</a></li>
+									<li><a href="#" onclick="Politique('/html/Politique.html')">Politique de confidentialité</a></li>
+									<li><a href="#" onclick="Termes('/html/Termes.html')">Termes et conditions</a></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-md-3 col-xs-6">
+							<div class="footer">
+								<h3 class="footer-title">Service</h3>
+								<ul class="footer-links">
+									<li><a href="#" onclick="choixConnexion('/html/optionConnexion.html')"><i class="fa fa-user"></i>Mon compte</a></li>
+									<li><a href="#"><i class="fa fa-info"></i>Aides</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /top footer -->
+
+			<!-- bottom footer -->
+			<div id="bottom-footer" class="section">
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<ul class="footer-payments">
+								<li><a href="#"><i class="fa fa-cc-visa"></i></a></li>
+								<li><a href="#"><i class="fa fa-credit-card"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-paypal"></i></a></li>
+								<li><a href="#"><i class="fa fa-cc-mastercard"></i></a></li>
+								
+							</ul>
+							<span class="copyright">
+								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+								 Tous droits réservés | G & C
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							</span>
+						</div>
+					</div>
+						<!-- /row -->
+				</div>
+				<!-- /container -->
+			</div>
+			<!-- /bottom footer -->
+		</footer>
+		<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/nouislider.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
+<script src="index.js"></script>

@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=100%, initial-scale=1.0"/>
+            
+<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">     
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">         
+<link rel="stylesheet" type="text/css" href="/css/index.css"> 
+
+<title> Ajoute un nutritionniste</title> 
+          
+</head> 
+<body class="col-md-6 offset-md-3">
+   
+    <div class="container" id="form"> 
+        <div class="row"> 
+        
+        <div class="col-md-6 main"> 
+                      
+            <form action="/nutritionniste" method="post">
+
+                <div class="form-group">
+
+                    <label><U><h4><B>Inscription de nutritionniste</B></h4></U></label><br><br>
+
+                    <i class="fa fa-user "></i>
+                     <label>Nom d'usager</label>
+                    <input type="text" class="form-control" name="username" placeholder="Nom d'usager" required />
+                </div>
+                           
+                <div class="form-group">
+                    <label>Nom</label>
+                    <input type="text" class="form-control" name="nom" placeholder="Nom" required />
+                </div>
+            
+                <div class="form-group">
+                    <label>Pr&eacute;nom</label>
+                    <input type="text" class="form-control" name="prenom" placeholder="Prénom" required />
+                </div>
+             
+                <div class="form-group">
+                    <label>Entreprise</label>
+                    <input type="text" class="form-control" name="entreprise" placeholder="Entreprise" required />
+                </div>
+            
+                <div class="form-group">
+                    <i class="fa fa-phone"></i> <label>T&eacute;l&eacute;phone</label>
+                    <input type="phone" class="form-control" name="telephone" placeholder="Téléphone" required />
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-mobile"></i> <label>Cellulaire</label>
+                    <input type="text" class="form-control" name="cellulaire" placeholder="Cellulaire" >
+                </div>
+            
+                <div class="form-group">
+                    <i class="fa fa-envelope"></i> <label>Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email" required />
+                </div>
+            
+                <div class="form-group">
+                    <i class="fa fa-map-marker"></i> <label>Adresse</label>
+                    <input type="text" class="form-control" name="adresse" placeholder="Adresse" >
+                </div>
+            
+                <div class="form-group">
+                    <label>Ville</label>
+                    <input class="form-control" type="text" name="ville" placeholder="Ville">
+                </div>
+
+                <div class="form-group">
+                    <label>Province</label>
+                    <input class="form-control" type="text" name="province" placeholder="Province">
+                </div>
+
+                <div class="form-group">
+                    <label>Pays</label>
+                    <input class="form-control" type="text" name="pays" placeholder="Pays">
+                </div>
+
+                <div class="form-group">
+                    <label>Code postal</label>
+                    <input class="form-control" type="text" name="zipCode" placeholder="Code postal">
+                </div>
+
+                <div class="form-group">
+                    <label>Travail</label>
+                    <input type="text" class="form-control" name="travail" placeholder="Nutritionniste" >
+                </div>
+
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="password" class="form-control" name="password" placeholder="Mot de passe" required />
+                </div>
+
+                <div class="form-group">
+                    <button type="reset"><i class="fa fa-remove"> <B>Efface tout le formulaire</B> </i></button>
+                </div>
+
+                <div id="modifier" class="form-group">
+                    <button  type="submit" class= "enregistre">
+                    <i class="fa fa-check"></i> S'inscrire</button>
+                </div> 
+
+            </form> 
+                      
+        </div>   
+     </div> 
+    </div> 
+</body> 
+</html> 

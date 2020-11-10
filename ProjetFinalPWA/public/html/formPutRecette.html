@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=100%, initial-scale=1.0"/>
+            
+<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">     
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">         
+<link rel="stylesheet" type="text/css" href="/css/index.css"> 
+
+<title> Modifier un recette</title> 
+          
+</head> 
+<body class="col-md-6 offset-md-3">
+   
+    <div class="container" id="form"> 
+        <div class="row"> 
+        
+        <div class="col-md-6 main"> 
+                      
+            <form >
+
+                <div id="modifier" class="form-group">
+                    
+                    <button  onclick="modifierUnrecette(document.getElementById('id').value)" class= "enregistre">
+                        <i class="fa fa-check"></i> Modifier</button>
+                   
+                </div>   
+                       
+                <div class="form-group">
+                    Id: <input id="id" type="text" class="form-control"  required />
+                </div>
+    
+                <div class="form-group">
+                    Catégorie: <input id="categorie" type="text" class="form-control"  required />
+                </div>
+
+                <div class="form-group">
+                    Nom: <input id="nom" type="text" class="form-control"  required />
+                </div>
+            
+                <div class="form-group">
+                    Chemin d'image: <input id="cheminImage" type="text" class="form-control"  required />
+                </div>
+            
+                <div class="form-group">
+                    Instructions: <input id="instructions" type="text" class="form-control"  required />
+                </div>
+            
+                <div class="form-group">
+                    Ingrédients: <input id="ingredients" type="text" class="form-control"  />
+                </div>
+            
+                <div class="form-group">
+                    Portions: <input id="portions" type="text" class="form-control"   />
+                </div>
+            
+                <div class="form-group">
+                    Cuisson: <input id="cuisson" type="number" class="form-control"  /> <br>
+                </div>
+                      
+            </form>        
+        </div>   
+     </div> 
+    </div> 
+</body> 
+</html> 
+<script src="index.js"></script>
