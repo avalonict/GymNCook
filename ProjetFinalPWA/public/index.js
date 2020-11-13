@@ -8,7 +8,6 @@ function loadJSON(url){
     .then(reponse => reponse.json());
   }
 
-  
 function Politique(url) { 
     fetch(url) 
     .then(function(reponse){ 
@@ -73,15 +72,17 @@ function choixInscription(url) {
   .then(function(reponse){ 
   return reponse.text();  }) 
   .then(function(html){  
-document.getElementById("voirHtml").innerHTML = html; }); }
+document.getElementById("voirHtml").innerHTML = html; }); 
+}
 
 
 function choixConnexion(url) { 
   fetch(url) 
   .then(function(reponse){ 
-  return reponse.text();  }) 
+  return reponse.text();  })
   .then(function(html){  
-document.getElementById("voirHtml").innerHTML = html; }); }
+document.getElementById("voirHtml").innerHTML = html; }); 
+}
 
 
 function choixCRUD(url) { 
@@ -93,21 +94,7 @@ document.getElementById("voirHtml").innerHTML = html; }); }
 
 
 function userInscription() {
-  if (document.getElementById("liste").value == 'utilisateur') {
     inscriptionUsager('/html/userInscription.html');
-  } 
-
-  else if (document.getElementById("liste").value == 'nutritionniste') {
-    inscriptionUsager('/html/nutritionnisteInscription.html');
-  } 
-
-  else if (document.getElementById("liste").value == 'admin') {
-    inscriptionUsager('/html/adminForm.html');
-  } 
-  
-  else {
-    inscriptionUsager('/html/entraineurInscription.html');
-  }
 }
 
 function inscriptionUsager(url) { 
@@ -119,17 +106,7 @@ function inscriptionUsager(url) {
 
 
 function userConnexion() {
-  if (document.getElementById("liste").value == 'utilisateur') {
     connexion('/html/loginUsager.html');
-  } 
-
-  else if (document.getElementById("liste").value == 'nutritionniste') {
-    connexion('/html/loginNutritionniste.html');
-  } 
-
-  else {
-    connexion('/html/loginEntraineur.html');
-  }
 }
 
 function adminCRUD() {
@@ -225,7 +202,6 @@ document.getElementById("entraineurConnecte").innerHTML = objJSON.username;
    
 });
 });
-  
 
 function connexion(url) { 
       fetch(url) 
@@ -235,7 +211,7 @@ function connexion(url) {
       document.getElementById("voirHtml").innerHTML = compte; }); }
 
 
-  fetch(`http://localhost:4200/home`, {
+  fetch(`http://localhost:4200/informationMembre`, {
         method: 'GET'
     })
   .then(reponse => reponse.text())
@@ -291,7 +267,7 @@ function profilMembre(url) {
         return reponse.text();  }) 
         .then(function(profil){  
     
-        fetch(`http://localhost:4200/home`, {
+        fetch(`http://localhost:4200/informationMembre`, {
             method: 'GET'
         })
       .then(reponse => reponse.text())

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym & Cook - Recettes</title>
+
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    <script src="js/script.js"></script>
+    <script src="https://kit.fontawesome.com/81c5aee0d0.js" crossorigin="anonymous"></script>
+</head>
+<body id="bodyRecette" onload="recupererRecettes()">
+
+    <div class="divNavigationHaut">
+        <div class="divTexte">
+            <i class="fas fa-search"></i>
+            <input id="texteUtilisateurRecherche" type="text" onkeyup="rechercherSelection()">
+        </div>
+        <div class="iconCompte">
+            <i class="fas fa-user"></i>
+        </div>
+    </div>
+
+    <div id="divListeRecette" class="divListe">
+    </div>
+    
+    <div class="divNavigation">
+        <form action='/home' method="get">
+            <button class="btnNav">&#9664</button>
+        </form>
+            <p id="navigationRecettesPub">Nos recettes</p>
+        <form action='/pageExercices' method="get">
+            <button class="btnNav" onclick>&#9654</button>
+        </form>
+    </div>
+
+</body>
+</html>

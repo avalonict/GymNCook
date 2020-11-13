@@ -1,0 +1,241 @@
+@font-face {
+    font-family: Questrial;
+    src: url("../fonts/Questrial-Regular.ttf");
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    flex-direction: column;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+#bodyExercice {
+    background-image: url("../img/fond.jpg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: auto 100vh;
+}
+
+.divTexte {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 2.5vh;
+    height: 5vh;
+    width: 60vmin;
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.divTexte:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.iconCompte {
+    margin-left: 5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 10vh;
+    border-radius: 5vh;
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+.iconCompte:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.divConnexion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.divNavigationHaut {
+    display: flex;
+    width: 80vmin;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 5vh;
+    font-family: Questrial;
+    font-size: 2.5vh;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.divTexte i {
+    margin: 0;
+    margin-left: 2vmin;
+    color: #041952;
+    opacity: 0.8;
+}
+
+#texteUtilisateurRecherche {
+    background: transparent;
+    color: #041952;
+    border: none;
+    width: 80%;
+    height: 80%;
+    font-size: 2.5vh;
+    outline: none;
+    padding-left: 3vmin;
+}
+
+.iconCompte i {
+    color: #041952;
+    opacity: 0.8;
+    font-size: 3.5vh;
+}
+
+.divListe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+    margin-top: 5vmin;
+    overflow: scroll;
+}
+
+.carteListe {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 15vh;
+    min-height: 15vh;
+    width: 80vmin;
+    margin: 2vmin;
+    border: none;
+    border-radius: 7.5vh;
+    font-family: Questrial;
+    font-size: 3vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition-duration: 400ms;
+}
+
+.carteListe:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.iconImage {
+    margin-left: 1vh;
+    border: none;
+    height: 13vh;
+    width: 13vh;
+    border-radius: 7vh;
+}
+
+.nomDetailExercice {
+    color: #041952;
+    font-size: 4vmin;
+    margin-left: 5vmin;
+    opacity: 0.8;
+}
+
+.nomDetailExercice p {
+    margin: 0;
+}
+
+.detailExercice {
+    font-size: 2vh;
+    display: flex;
+    flex-direction: row;
+    opacity: 0.7;
+}
+
+.detailExercice p {
+    margin-right: 2vmin;
+}
+
+.divNavigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 3vmin;
+    font-family: Questrial;
+    font-size: 3vh;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.btnNav {
+    border: none;
+    background: transparent;
+    font-size: 3vmin;
+    color: rgba(255, 255, 255, 0.50);
+}
+
+.btnNav:focus {
+    outline: none;
+}
+
+.divConnexion .divFlexColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.divConnexion .carteExercice {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 2vh;
+    border-radius: 5vh;
+    margin: 0vh 3vh;
+    margin-top: -6vh;
+    height: 75vh;
+}
+
+.divConnexion .carteExercice .boiteDeroulante {
+    flex-direction: column;
+    height: 70vh;
+    overflow-y: scroll;
+}
+
+.divConnexion .headerExercice {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 12vh;
+    color: #041952;
+    font-family: Questrial;
+    font-size: 1.5vh;
+}
+
+.divConnexion .bodyExercice {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    color: #041952;
+    font-family: Questrial;
+    padding: 2vw;
+    font-size: 2vh;
+}
+
+.divConnexion .carteExercice {
+    display: flex;
+    flex-direction: column;
+}
+
+.headerExercice h1 {
+    margin-left: 2vw;
+    margin-bottom: 0;
+    font-size: 3vh;
+}
+
+.headerExercice h3 {
+    margin: 0vw 1.5vw;
+    opacity: .8;
+    font-size: 2vh;
+}
+
+.divConnexion div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
