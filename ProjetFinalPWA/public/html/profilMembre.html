@@ -1,51 +1,105 @@
-<form action="/membre" method="post">
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">     
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">         
 
-    <div class="divFormulaire">
 
-        <div class="divChampUtil">
-            <input id="id" type="text" class="saisiTexteConnexion" disabled="disabled" />
-        </div>
-        <div class="divChampUtil">
-            <input class="saisiTexteConnexion" name="username" id="username" type="text">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Nom" class="saisiTexteConnexion" name="nom" id="nom" type="text">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Prénom" class="saisiTexteConnexion" name="prenom" id="prenom" type="text">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Téléphone" class="saisiTexteConnexion" name="telephone" id="telephone" type="phone">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Adresse Postale" class="saisiTexteConnexion" name="adresse" id="adresse" type="text">
-        </div>
-        <div class="divChampFormulaire">
-            <input placeholder="Code postal" class="saisiTexteConnexion" name="zipCode" id="zipCode" type="text">
-            <input placeholder="Ville" class="saisiTexteConnexion" name="ville" id="ville" type="text ">
-        </div>
-        <div class="divChampFormulaire">
-            <input placeholder="Province" class="saisiTexteConnexion" name="province" id="province" type="text ">
-            <input placeholder="Pays" class="saisiTexteConnexion" name="pays" id="pays" type="text ">
-        </div>
-        <div class="divChampUtil">
-            <input class="saisiTexteConnexion" name="email" id="email" type="email">
-        </div>
-        <div class="divChampUtil">
-            <input class="saisiTexteConnexion" name="password" id="password" type="password">
-        </div>
+<title> Mon profil</title> 
+          
+</head> 
+<body class="col-md-6 offset-md-3">
+   
+    <div class="container" id="form"> 
+        <div class="row"> 
+        
+        <div class="col-md-6 main"> 
+            <form >
+                <label><U><h3><B>Mon profil</B></h3></U></label><br>
+                <div class="form-group">
+                    Id : <input id="id" type="text" class="form-control"  required />
+                </div>
+                         
+                <div class="form-group">
+                    <i class="fa fa-user "></i> 
+                    Nom d'usager : <input id="username" type="text" class="form-control"  required />
+                </div>
 
-        <div class="divChampUtil">
-            <input placeholder="Travail" class="saisiTexteConnexion" name="travail" id="travail" type="text ">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Cellulaire" class="saisiTexteConnexion" name="cellulaire" id="cellulaire" type="phone">
-        </div>
-        <div class="divChampUtil">
-            <input placeholder="Entreprise" class="saisiTexteConnexion" name="entreprise" id="entreprise" type="text">
-        </div>
-        <div>
-            <button id="btnModifier" onclick="modifierUnMembre(document.getElementById('id').value)" type="submit" class="btnCreationCompte">Modifier</button>
-            <button id="btnSupprimer" onclick="supprimerUnMembre(document.getElementById('id').value)" class="btnCreationCompte">Supprimer</button>
-        </div>
-</form>
+                <div class="form-group">
+                    Prénom : <input id="prenom" type="text" class="form-control" name="prenom" required />
+                </div>
+            
+                <div class="form-group">
+                    Nom : <input id="nom" type="text" class="form-control" name="nom" required />
+                </div>
+             
+                <div class="form-group">
+                    Entreprise: <input id="entreprise" type="text" class="form-control" name="entreprise" >
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-phone"> </i>
+                    Téléphone : <input id="telephone" type="phone" class="form-control" name="telephone" >
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-mobile"> </i>
+                    Cellulaire: <input id="cellulaire" type="text" class="form-control"  name="cellulaire" >
+                </div>
+
+                <div class="form-group">
+                    <i class="fa fa-envelope"></i>
+                     Courriel : <input id="email" type="email" class="form-control" name="email" required />
+                </div>
+            
+                <div class="form-group">
+                    <i class="fa fa-map-marker"></i>
+                    Adresse : <input id="adresse" type="test" class="form-control" name="adresse" >
+                </div>
+
+                <div class="form-group">
+                    Code postal : <input id="zipCode"  class="form-control" type="text" name="zipCode" >
+                </div>
+        
+                <div class="form-group">
+                    Ville : <input id="ville"  class="form-control" type="text" name="ville" >
+                </div>
+
+                <div class="form-group">
+                    Province :  <input id="province"  class="form-control" type="text" name="province" >
+                </div>
+
+                <div class="form-group">
+                    Pays : <input id="pays"  class="form-control" type="text" name="pays" >
+                </div>
+
+                <div class="form-group">
+                    Travail: <input id="travail" type="text"  class="form-control" name="travail" ><br>
+                </div>
+
+                <div class="form-group">
+                    Mot de passe : <input id="password" type="password" class="form-control" required />
+                </div>
+                
+                <div id="modifier" class="form-group">
+                    <button  onclick="modifierUnMembre(document.getElementById('id').value)" class= "enregistre">
+                        <i class="fa fa-pencil"></i> Modifier</button>
+                </div>   
+
+                <span id="supprimer" class="form-group">
+                    <button  onclick="supprimerUnMembre(document.getElementById('id').value)" class= "enregistre">
+                        <i class="fa fa-trash"></i> Supprimer</button>
+                </span>   
+
+            </form> 
+                      
+        </div>   
+     </div> 
+    </div> 
+</body> 
+</html> 

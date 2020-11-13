@@ -1,14 +1,46 @@
-<form action="auth" method="POST">          
-                
-    <input class="saisiTexteConnexion" name="username" type="text" placeholder="nom d'utilisateur" required>
-    <input class="saisiTexteConnexion" name="password" type="text" placeholder="mot de passe" required>
-    <button id="btnConnexion" class="btnCompte">Se connecter</button>
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+<link rel="stylesheet" href= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+integrity= "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">     
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">         
 
-</form> 
 
-<div class="divNavigation">
+<title> Formulaire d’authentification</title> 
+          
+</head> 
+<body class="col-md-6 offset-md-3">
+   
+    <div class="container" id="form"> 
+        <div class="row"> 
+        
+        <div class="col-md-6 main"> 
+            <label><U><h4><B>Connexion d'utilisateur</B></h4></U></label><br><br>
+            
+            <form action="auth" method="POST">          
+                              
+                <div class="form-group">
+                     <label>Nom d'usager</label>
+                    <input type="text" class="form-control" name="username" placeholder="Nom d'usager" required />
+                </div>
+            
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="password" class="form-control" name="password" placeholder="Mot de passe" >
+                </div>
 
-    <p id="navigationRecettesPub" onclick="userInscription()">Créer un compte</p>
+                <div id="modifier" class="form-group">
+                    <button  type="submit" class= "enregistre">
+                    <i class="fa fa-check"></i> Connecter</button>
+                </div> 
+            </form> 
 
-</div>
-
+        </div>   
+     </div> 
+    </div> 
+</body> 
+</html> 

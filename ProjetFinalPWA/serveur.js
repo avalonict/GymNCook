@@ -1,7 +1,16 @@
 const express = require('express'); 
 const bodyParser=require("body-parser"); 
 const mongoose = require("mongoose"); 
-const session = require('express-session'); 
+const session = require('express-session');
+const methodOverride = require('method-override');
+const config = require('./config');
+const multer = require('multer');
+const GridFsStorage = require('multer-gridfs-storage');
+const crypto = require('crypto');
+const path = require('path');
+
+
+const imageRouter = require('./routes/image');
 
 
 const app = express(); 
@@ -10,6 +19,8 @@ const port = 4200;
 app.use(bodyParser.json()); 
 app.use(express.static('public')); 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({  secret: 'secret',  
 resave: true,  saveUninitialized: true })); 
@@ -20,14 +31,40 @@ response.setHeader("Access-Control-Allow-Headers", "Origin, X-RequestedWith, Con
 response.setHeader('Access-Control-Allow-Credentials', true); next(); }); 
 
 app.use(express.json()); 
- 
-mongoose.connect('mongodb+srv://admin:admin1234@clustergym.noibn.mongodb.net/GymNCook?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
+
+const url = config.mongoURI;
+
+mongoose.connect(url , { useUnifiedTopology: true, useNewUrlParser: true });
 let db=mongoose.connection; 
 db.on('error', console.log.bind(console, "Echec de connexion à la BD Mongo...")); 
 
 db.once('open', function(callback){ 
     console.log("Connecté à la BD Mongo..."); 
-}) 
+})
+
+// Creation du moteur de stockage
+const storage = new GridFsStorage({
+    url: config.mongoURI,
+    file: (req, file) => {
+        return new Promise((resolve, reject) => {
+            crypto.randomBytes(16, (err, buf) => {
+                if (err) {
+                    return reject(err);
+                }
+                const filename = buf.toString('hex') + path.extname(file.originalname);
+                const fileInfo = {
+                    filename: filename,
+                    bucketName: 'uploads'
+                };
+                resolve(fileInfo);
+            });
+        });
+    }
+});
+
+const upload = multer({ storage });
+
+app.use('/', imageRouter(upload));
 
 const membreSchema = new mongoose.Schema({  
     username: {
@@ -421,38 +458,23 @@ app.post('/auth', function (req, res, next) {
         });
      });
 
-app.get('/informationMembre', function(req, res) {  
-    if (req.session.loggedin) {   
-        console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
-        res.send (
-        req.query._id = req.session._id 
-        );
-    } 
-    else { res.send("Pour voir cette page, il faut être connecté");}  
-    res.end(); }); 
-
+     
 app.get('/home', function(req, res) {  
         if (req.session.loggedin) {   
             console.log("Bienvenue , " + req.session.prenom + " " + req.session.nom + " !")
-            return res.redirect("/home93e8.html")
+            res.send (
+            req.query._id = req.session._id 
+            );
         } 
-        else { 
-            return res.redirect("/index.html")
-        }
-}); 
+        else { res.send("Pour voir cette page, il faut être connecté");}  
+        res.end(); }); 
 
 app.get('/logout', function (req, res) {
         req.session.loggedin = false; 
         res.redirect("/index.html");
     });
 
-app.get('/pageRecettes', function (req, res) {
-    return res.redirect("/recettes.html");
-});
 
-app.get('/pageExercices', function (req, res) {
-    return res.redirect("/exercices.html");
-});
 
 const adminSchema = new mongoose.Schema({  
         username: {

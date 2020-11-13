@@ -5,7 +5,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
+		 <link rel="manifest" href="GymNCook-manifest-26307.json">
+		 <script src="js/sw-GymNCook.js"></script>
 		<title>projet</title>
 
 		<!-- Google font -->
@@ -61,7 +62,7 @@
 						<div class="col-md-3">
 							<div class="header-logo">
 								<a href="#" class="logo">
-									<img src="./img/Logo.jpg" alt="">
+									<img src="./img/logoGC.png" alt="">
 								</a>
 							</div>
 						</div>
@@ -222,7 +223,7 @@
 								<ul class="footer-links">
 									<li><a href="#"><i class="fa fa-map-marker"></i>9155 Rue St-Hubert</a></li>
 									<li><a href="#"><i class="fa fa-phone"></i>514.389.5921</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i>info@gymc.com</a></li>
+									<li><a href="#"><i class="fa fa-envelope"></i>info@gymc.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -244,8 +245,8 @@
 								<h3 class="footer-title">Information</h3>
 								<ul class="footer-links">
 									<li><a href="#">Contactez-nous</a></li>
-									<li><a href="#">Politique de confidentialité</a></li>
-									<li><a href="#">Termes et conditions</a></li>
+									<li><a href="#" onclick="Politique('/html/Politique.html')">Politique de confidentialité</a></li>
+									<li><a href="#" onclick="Termes('/html/Termes.html')">Termes et conditions</a></li>
 								</ul>
 							</div>
 						</div>
@@ -254,8 +255,8 @@
 							<div class="footer">
 								<h3 class="footer-title">Service</h3>
 								<ul class="footer-links">
-									<li><a href="#">Mon compte</a></li>
-									<li><a href="#">Aides</a></li>
+									<li><a href="#" onclick="choixConnexion('/html/optionConnexion.html')"><i class="fa fa-user"></i>Mon compte</a></li>
+									<li><a href="#"><i class="fa fa-info"></i>Aides</a></li>
 								</ul>
 							</div>
 						</div>
